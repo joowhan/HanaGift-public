@@ -1,0 +1,521 @@
+/* Add to your CSS file or within a <style> tag */
+.user-info-section ul {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info-section ul li:last-child {
+    border-bottom: none;
+}
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-primary {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+/* Add this to your CSS file or within a <style> tag */
+.nav-pills .nav-link {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #5a67d8;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(90, 103, 216, 0.4);
+}
+
+.nav-pills .nav-link i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #5a67d8;
+    color: #fff;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+.profile-background {
+    background-image: url("/images/hanabank_characters.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 프로필 이미지 컨테이너 */
+.profile-img-container {
+    margin-bottom: 0; /* 카드 안에서의 여백 제거 */
+    border-radius: 50%;
+    width: 120px; /* 이미지 크기 조정 */
+    height: 120px;
+    overflow: hidden; /* 이미지를 원형으로 유지 */
+    border: 3px solid #28a745; /* 테두리 추가 */
+}
+
+/* 프로필 이미지 스타일 */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 개인정보 카드 */
+.profile-info {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h4 {
+    margin-bottom: 10px;
+    color: #009778;
+    font-family: "HanaFont-CM";
+    font-size: 1.5rem;
+}
+
+.info-section {
+    margin-bottom: 10px;
+    color: #555;
+    font-family: "HanaFont-CM";
+}
+
+/* 상태 메시지 섹션 */
+.status-section {
+    display: flex;
+    align-items: center;
+    font-family: "HanaFont-CM";
+    margin-bottom: 15px;
+}
+
+.status-section .fa-pencil {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #009778;
+}
+
+/* 버튼 스타일 */
+.edit-btn {
+    background-color: #009778;
+    border-color: #009778;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn i {
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #007a5a;
+}
+
+/* 플러스 카드 스타일 */
+.plus-card-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.plus-card-header {
+    font-family: "HanaFont-CM";
+    font-size: 1.3rem;
+    color: #009778;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.plus-card {
+    border: 2px dashed #009778;
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.plus-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.plus-card-title {
+    font-weight: bold;
+    color: #009778;
+    font-size: 1.2rem;
+}
+
+.plus-card:hover {
+    background-color: #eaf8e6;
+    border-color: #007a5a;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn {
+    background-color: #009778;
+    border-color: #009778;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.edit-btn i {
+    margin-right: 5px;
+}
+.edit-btn:hover {
+    background-color: #007a5a;
+}
+
+.info-section strong {
+    display: inline-block;
+    width: 100px;
+}
+.status-section {
+    display: flex;
+    font-family: "HanaFont-CM";
+    align-items: center;
+    margin-bottom: 10px;
+}
+.status-section .fa-pencil {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #009778;
+}
+
+/* 이미지 미리보기 스타일 */
+#imagePreview {
+    max-width: 150px;
+    max-height: 150px;
+    display: none; /* 처음에는 숨겨져 있음 */
+    border-radius: 15px;
+    border: 2px solid #009778; /* 테두리 추가 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+/* gift-box.css */
+
+/* 텍스트 영역에만 폰트 적용 */
+h3.mtext-111,
+p.stext-113,
+.nav-pills .nav-link,
+.gift-item p,
+.gift-item .badge,
+.btn-outline-primary,
+.btn-success {
+    font-family: "HanaFont-CM", sans-serif;
+}
+
+/* 일반 스타일 */
+h3.mtext-111 {
+    font-weight: bold;
+    color: #2d3e50;
+}
+
+p.stext-113 {
+    color: #8693a6;
+}
+
+/* 탭 버튼 기본 스타일 */
+.nav-pills .nav-link {
+    background-color: #e3e7ea; /* 기본 배경색 */
+    color: #008485; /* 기본 텍스트 색상 */
+    border-radius: 25px; /* 둥근 모서리 */
+    padding: 10px 20px; /* 패딩 조절 */
+    margin-right: 10px; /* 버튼 간 간격 */
+    font-weight: bold; /* 텍스트 굵기 */
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+    border: 2px solid transparent; /* 기본 테두리 */
+}
+
+/* 활성화된 탭 버튼 스타일 */
+.nav-pills .nav-link.active {
+    background: #db1b23; /* 활성화된 탭 배경색 */
+    color: #fff; /* 활성화된 탭 텍스트 색상 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 활성화된 탭 그림자 */
+    border-color: #db1b23; /* 활성화된 테두리 색상 */
+}
+
+/* 탭 버튼에 입체감을 주기 위한 스타일 */
+.nav-pills .nav-link:active {
+    background-color: #b8dad9; /* 클릭 시 배경색 */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1); /* 클릭 시 안쪽으로 눌리는 효과 */
+}
+
+.gift-category {
+    display: none;
+}
+
+.gift-category.active {
+    display: block;
+}
+
+.gift-item {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gift-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.gift-item .badge {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+/* 버튼 스타일 */
+.btn-outline-primary {
+    color: #1dbf73;
+    border-color: #1dbf73;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: #1dbf73;
+    color: #ffffff;
+}
+
+.btn-success {
+    background-color: #1dbf73;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #17a763;
+    color: #ffffff;
+}
+
+.badge-warning {
+    background-color: #ffb822;
+    color: #ffffff;
+}
+
+.badge-success {
+    background-color: #1dbf73;
+    color: #ffffff;
+}
+
+.badge-danger {
+    background-color: #ff5b5c;
+    color: #ffffff;
+}
+
+.nav-tabs .nav-link {
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+}
+
+.gift-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.gift-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.gift-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* 항목 간 간격 */
+    font-size: 14px; /* 텍스트 크기 */
+    color: #555; /* 텍스트 색상 */
+}
+
+.gift-details span {
+    font-family: "HanaFont-CM";
+    display: inline-block;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+.gift-type {
+    font-weight: bold;
+    color: #333; /* 중요 정보에 더 짙은 색상 적용 */
+}
+
+.gift-info {
+    flex-grow: 1; /* 필요할 경우, 여유 공간을 사용 */
+}
+
+.gift-amount {
+    color: #007bff; /* 금액 정보에 강조 색상 적용 */
+    font-weight: bold;
+}
+
+.gift-details span:not(:last-child)::after {
+    content: "|"; /* 각 정보 사이에 구분자 추가 */
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #ccc; /* 구분자 색상 */
+}
+
+.badge {
+    font-size: 14px;
+    padding: 8px;
+}
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.show.active {
+    display: block;
+}
+
+.dropdown-toggle {
+    background-color: #1b9a97;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background-color: #137973;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #009778;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #c3e4e2;
+    color: #009778;
+}
+
+.dropdown-menu .dropdown-item.active {
+    background-color: #db1b23;
+    color: #fff;
+    font-weight: bold;
+}
+.gift-header {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+}
+
+.text-container {
+    margin-left: 15px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+
+.gift-header h3.mtext-111 {
+    font-family: "HanaFont-CM"; /* 제목 폰트 적용 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-header p.stext-113 {
+    font-family: "HanaFont-CM"; /* 설명글 폰트 적용 */
+    margin-top: 5px; /* 제목과 설명 글 사이의 간격 설정 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-icon {
+    width: 60px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+.gift-item {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: none; /* 초기에는 모든 선물 숨김 */
+}
+
+.gift-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.gift-item .badge {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .gift-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gift-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ml-auto {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gift-details {
+        font-size: 14px;
+    }
+
+    .gift-header h3 {
+        font-size: 18px;
+    }
+
+    .gift-header p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,162 @@
+
+.gift-header {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+}
+.text-container {
+    margin-left: 15px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+.gift-header h3.mtext-111 {
+    font-family: "HanaFont-CM"; /* 제목 폰트 적용 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-header p.stext-113 {
+    font-family: "HanaFont-CM"; /* 설명글 폰트 적용 */
+    margin-top: 5px; /* 제목과 설명 글 사이의 간격 설정 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-icon {
+    width: 60px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+.exchange-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.currency-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+.currency-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.currency-input select {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.currency-flag {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.currency-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #888;
+    margin-right: 10px;
+}
+
+.currency-select option {
+    display: flex;
+    align-items: center;
+}
+
+.exchange-rate {
+    font-size: 1em; /* 적당한 크기로 조정 */
+    display: inline-block;
+    color: #333;
+}
+
+.exchange-rate span {
+    font-weight: bold;  /* 숫자 및 환율 관련 텍스트 굵게 */
+}
+
+.rate-change {
+    display: inline-block;
+    margin-left: 10px; /* 환율과 변동 텍스트 사이 간격 */
+}
+
+.wrap-table-shopping-cart {
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}
+.table_head {
+    font-family: HanaFont-CM;
+}
+
+@media (max-width: 768px) {
+    .currency-section {
+        max-width: 100%;
+    }
+
+    .currency-input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #exchangeRateChart {
+        width: 20%; /* 모바일 화면에서 높이 조절 */
+    }
+}
+
+.title-header {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+}
+.text-container {
+    margin-left: 15px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+.title-header h3.mtext-111 {
+    font-family: "HanaFont-CM"; /* 제목 폰트 적용 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.title-header p.stext-113 {
+    font-family: "HanaFont-CM"; /* 설명글 폰트 적용 */
+    margin-top: 5px; /* 제목과 설명 글 사이의 간격 설정 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-icon {
+    width: 60px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+
+
+
+
+

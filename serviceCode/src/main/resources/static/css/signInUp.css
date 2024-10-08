@@ -1,0 +1,231 @@
+/* 폼 컨테이너 스타일 */
+.custom-form-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-family: "HanaFont-CM", sans-serif;
+}
+
+/* 제목 스타일 */
+.form-title {
+    font-family: 'HanaFont-CM', sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #009778;
+    margin-bottom: 30px;
+}
+
+/* 필수 입력 표시 */
+.required {
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* 폼 그룹 스타일 */
+.custom-form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    border-color: #009778;
+    outline: none;
+}
+
+/* 본인 인증 버튼 크기 조정 */
+/* 본인 인증 버튼 크기 조정 및 정렬 */
+/* 본인 인증 버튼을 포함한 그룹 정렬 */
+.custom-form-group.d-flex {
+    display: flex;
+    align-items: end; /* 버튼과 입력 필드를 수직 중앙에 정렬 */
+}
+
+/* 본인 인증 버튼 크기 및 정렬 조정 */
+.verify-btn {
+    margin-left: 10px;
+    background-color: #009778;
+    color: white;
+    border: none;
+    padding: 5px 15px;  /* 패딩을 줄여서 높이 정렬을 맞춤 */
+    font-size: 14px;    /* 폰트 크기 조정 */
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px; /* 고정된 높이 대신 자동으로 높이 맞춤 */
+    display: flex;
+    align-items: center; /* 버튼 내부 텍스트를 수직 중앙 정렬 */
+    justify-content: center; /* 텍스트를 가로로 중앙 정렬 */
+}
+
+/* 인증 완료 텍스트 */
+.verified-text {
+    margin-left: 10px;
+    color: #28a745;
+    font-size: 14px;
+    line-height: 38px;
+    display: none;
+}
+
+.verified-text.active {
+    display: block;
+}
+
+/* 체크박스 스타일 */
+.custom-checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.custom-checkbox-group input {
+    margin-right: 10px;
+}
+
+/* 버튼 스타일 */
+.custom-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 45%;
+}
+
+.btn-signup {
+    background-color: #009778;
+}
+
+.btn-login {
+    background-color: #009778;
+}
+
+.custom-btn:hover {
+    opacity: 0.9;
+}
+
+/* 폼 전환 링크 스타일 */
+.toggle-link {
+    color: #009778;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.toggle-link:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 우측 이미지 스타일 */
+.hanacharacter-image {
+    max-width: 400px;
+    width: 100%;
+}
+.login-content{
+    background-color: #FFFFFF;
+}
+
+.profile-image-container {
+    margin-bottom: 20px;
+    border: #0b2e13 1px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.profile-img.selected-profile {
+    border-color: #009778; /* 선택 시 테두리 색상 */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* 주민번호 뒤 6자리 마스킹 스타일 */
+/* 주민번호 뒤 6자리 마스킹 스타일 */
+.ssn-back-container {
+    position: relative;
+    display: inline-block;
+    width: 100px; /* 마스킹된 영역의 너비 설정 */
+}
+
+.ssn-back-input {
+    width: 30px; /* 입력되는 한자리 필드 크기 */
+    position: relative;
+    z-index: 2; /* 입력 필드를 최상위로 설정 */
+    background-color: transparent;
+    border: 1px solid #009778; /* 입력 필드 테두리 */
+    border-radius: 5px;
+    text-align: center;
+    outline: none; /* 클릭 시 기본 테두리 제거 */
+}
+
+.ssn-back-mask {
+    position: absolute;
+    left: 40px; /* 마스킹이 입력 필드 옆에 오도록 조정 */
+    top: 0;
+    z-index: 1; /* 마스크 레이어는 뒤에 위치 */
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none; /* 마스크가 마우스 이벤트를 차단하지 않음 */
+}
+
+.ssn-back-container input:focus {
+    border-color: #009778;
+}
+
+/* 주민번호 앞자리 필드 스타일 */
+#ssn-front {
+    width: 120px; /* 앞자리 필드의 너비를 줄임 */
+}
+
+/* 주민번호 뒷자리 필드 스타일 */
+.ssn-back-input {
+    width: 40px; /* 뒷자리 필드의 너비를 늘림 */
+    position: relative;
+    z-index: 2; /* 입력 필드를 최상위로 설정 */
+    background-color: transparent;
+    border: 1px solid #009778; /* 입력 필드 테두리 */
+    border-radius: 5px;
+    text-align: center;
+    outline: none; /* 클릭 시 기본 테두리 제거 */
+}
+
+/* 주민번호 뒷자리 마스킹 스타일 */
+.ssn-back-mask {
+    position: absolute;
+    left: 50px; /* 마스킹이 입력 필드 옆에 오도록 조정 */
+    top: 0;
+    z-index: 1; /* 마스크 레이어는 뒤에 위치 */
+    font-size: 1rem;
+    color: #999;
+    pointer-events: none; /* 마스크가 마우스 이벤트를 차단하지 않음 */
+}

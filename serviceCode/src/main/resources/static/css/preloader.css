@@ -1,0 +1,61 @@
+body{background-color:#fff !important;}
+.text-white{color:#fff;text-shadow:1px 1px 1px #000;}
+h3.h3{text-align:center;padding:1.5em 0em 2em 0em;text-transform:capitalize;font-size:1.5em;}
+.container-fluid{padding:2em 0em 4em 0em;background: linear-gradient(to right,#7474bf,#348ac7);}
+.container{padding:2em 0em 5em 0em;}
+.bg-1{background: linear-gradient(to right,#7b4379,#dc2430);}
+.bg-2{background:#ABAD5D;}
+.bg-3{background:#1ABC9C;}
+/********************  Preloader Demo-14 *******************/
+.loader14{width:90px;height:90px;margin:40px auto}
+.loader14 .loader-inner{width:60px;height:60px;position:relative;margin:0 auto}
+.loader14 .loader-inner div{content:"";width:16px;height:16px;border-radius:50%;background:#00bee0;position:absolute;top:10px;left:10px;transform-origin:20px 20px;-webkit-animation:loading-14 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-14 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-2{top:10px;left:auto;right:10px;transform-origin:-4px 20px;-webkit-animation:loading-142 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-142 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-3{top:auto;left:auto;right:10px;bottom:10px;transform-origin:-4px -4px;-webkit-animation:loading-143 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-143 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .loader-inner .box-4{top:auto;bottom:10px;transform-origin:20px -4px;-webkit-animation:loading-144 2s infinite cubic-bezier(.5,0,.5,1);animation:loading-144 2s infinite cubic-bezier(.5,0,.5,1)}
+.loader14 .text{display:block;font-size:12px;color:#00bee0;text-align:center}
+@-webkit-keyframes loading-14{
+    0%{transform:rotate(90deg)}
+    50%{transform:rotate(180deg)}
+    75%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@keyframes loading-14{
+    0%{transform:rotate(90deg)}
+    50%{transform:rotate(180deg)}
+    75%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-142{
+    0%,25%{transform:rotate(90deg)}
+    25%{transform:rotate(180deg)}
+    75%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@keyframes loading-142{
+    0%,25%{transform:rotate(90deg)}
+    25%{transform:rotate(180deg)}
+    75%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-143{
+    0%,25%{transform:rotate(90deg)}
+    50%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@keyframes loading-143{
+    0%,25%{transform:rotate(90deg)}
+    50%{transform:rotate(270deg)}
+    100%{transform:rotate(360deg)}
+}
+@-webkit-keyframes loading-144{
+    0%,25%{transform:rotate(90deg)}
+    50%{transform:rotate(180deg)}
+    100%,75%{transform:rotate(360deg)}
+}
+@keyframes loading-144{
+    0%,25%{transform:rotate(90deg)}
+    50%{transform:rotate(180deg)}
+    100%,75%{transform:rotate(360deg)}
+}
+/********************  Preloader Demo-14 *******************/

@@ -1,0 +1,1007 @@
+/* Add to your CSS file or within a <style> tag */
+.user-info-section ul {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info-section ul li:last-child {
+    border-bottom: none;
+}
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-primary {
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+/* Add this to your CSS file or within a <style> tag */
+.nav-pills .nav-link {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #14807d;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(90, 103, 216, 0.4);
+}
+
+.nav-pills .nav-link i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #14807d;
+    color: #fff;
+}
+.nav-item{
+    font-family: "HanaFont-CM";
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+.profile-background {
+    background-image: url("../images/hanabank_characters.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 프로필 이미지 컨테이너 */
+.profile-img-container {
+    margin-bottom: 0; /* 카드 안에서의 여백 제거 */
+    border-radius: 50%;
+    width: 120px; /* 이미지 크기 조정 */
+    height: 120px;
+    overflow: hidden; /* 이미지를 원형으로 유지 */
+    border: 3px solid #28a745; /* 테두리 추가 */
+}
+
+/* 프로필 이미지 스타일 */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 개인정보 영역의 높이를 줄이기 위해 padding 조정 */
+.profile-info {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 100%; /* 높이를 전체 영역에 맞추기 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 수정 버튼이 하단에 위치하도록 */
+}
+
+.profile-info h4 {
+    margin-bottom: 10px;
+    color: #009778;
+    font-family: "HanaFont-CM";
+    font-size: 1.5rem;
+}
+
+.info-section {
+    margin-bottom: 10px;
+    color: #555;
+    font-family: "HanaFont-CM";
+}
+
+/* 상태 메시지 섹션 */
+.status-section {
+    display: flex;
+    align-items: center;
+    font-family: "HanaFont-CM";
+    margin-bottom: 15px;
+}
+
+.status-section .fa-pencil {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #009778;
+}
+
+/* 버튼 스타일 */
+.edit-btn {
+    background-color: #009778;
+    border-color: #009778;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn i {
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #007a5a;
+}
+
+/* 플러스 카드 스타일 */
+.plus-card-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.plus-card-header {
+    font-family: "HanaFont-CM";
+    font-size: 1.3rem;
+    color: #009778;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.plus-card {
+    border: 2px dashed #009778;
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.plus-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.plus-card-title {
+    font-weight: bold;
+    color: #009778;
+    font-size: 1.2rem;
+}
+
+.plus-card:hover {
+    background-color: #eaf8e6;
+    border-color: #007a5a;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.edit-btn {
+    background-color: #009778;
+    border-color: #009778;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.edit-btn i {
+    margin-right: 5px;
+}
+.edit-btn:hover {
+    background-color: #007a5a;
+}
+
+.info-name{
+    color: #2d3548; /* 이름 색상 변경 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* 이메일, 생년월일, 전화번호 스타일 */
+.info-section {
+    color: #6c757d; /* 나머지 정보 색상 */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.name-status-container {
+    display: flex;
+    align-items: flex-end; /* 자식 요소를 세로로 하단에 정렬 */
+    justify-content: flex-start; /* 요소들이 왼쪽에서부터 시작 */
+    gap: 15px; /* 이름과 상태 메시지 사이의 간격 */
+    margin-bottom: 5px;
+}
+
+/* 각 정보 행 간의 구분선 (약한 점선) */
+.info-section {
+    border-bottom: 1px dotted #cccccc; /* 약한 점선 구분선 추가 */
+    padding-bottom: 10px;
+}
+
+.info-section:last-child {
+    border-bottom: none; /* 마지막 정보에는 구분선을 표시하지 않음 */
+}
+
+
+.info-section strong {
+    color: #2d3548; /* 강조 정보는 이름 색상과 동일하게 설정 */
+    width: 100px;
+    display: inline-block;
+}
+.status-section {
+    display: flex;
+    align-items: center;
+    font-size: 1.0rem;
+    color: #555555; /* 상태 메시지 색상 (이름과 어울리도록 설정) */
+    margin-bottom: 15px;
+}
+
+.status-section i {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #2d3548; /* 연필 아이콘 색상 변경 */
+}
+
+.status-section .fa-pencil {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #009778;
+}
+
+/* 이미지 미리보기 스타일 */
+#imagePreview {
+    max-width: 150px;
+    max-height: 150px;
+    display: none; /* 처음에는 숨겨져 있음 */
+    border-radius: 15px;
+    border: 2px solid #009778; /* 테두리 추가 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+.gift-header {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+}
+
+.text-container {
+    margin-left: 15px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+
+.gift-header h3.mtext-111 {
+    font-family: "HanaFont-CM"; /* 제목 폰트 적용 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-header p.stext-113 {
+    font-family: "HanaFont-CM"; /* 설명글 폰트 적용 */
+    margin-top: 5px; /* 제목과 설명 글 사이의 간격 설정 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-icon {
+    width: 60px; /* 이미지 크기 조정 */
+    height: auto;
+}
+/* 개인정보와 버튼 영역 사이의 간격 추가 */
+.row.align-items-center {
+    margin-bottom: 20px; /* 개인정보와 버튼 영역 사이의 간격 */
+}
+
+/* 버튼 영역 전체 높이를 개인정보 영역에 맞추기 */
+.rectangular-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* 버튼 간 간격 조정 */
+    height: 100%; /* 개인정보 영역과 높이를 맞추기 위해 높이 설정 */
+}
+
+.rectangular-button-wrapper {
+    flex: 1 0 45%; /* 너비를 줄이기 위해 설정 (48%에서 45%로 감소) */
+    display: flex;
+    align-items: stretch; /* 버튼의 높이를 동일하게 맞추기 위해 추가 */
+}
+
+.rectangular-button {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+/* 모바일 화면에서 텍스트를 아이콘 아래로 배치 */
+@media (max-width: 768px) {
+    .rectangular-button {
+        flex-direction: column; /* 아이콘과 텍스트를 수직으로 배치 */
+        padding: 20px;
+    }
+
+    .rectangular-button img {
+        margin-right: 0; /* 아이콘과 텍스트 사이의 여백 제거 */
+        margin-bottom: 10px; /* 아이콘 아래에 여백 추가 */
+    }
+}
+.rectangular-button img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.rectangular-button span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.rectangular-button:hover {
+    background-color: #eaf8e6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* 위 버튼 1 */
+.gift-button {
+    background-color: #1b9a96; /* 청록색 */
+}
+
+.gift-button:hover {
+    background-color: #14807d; /* 어두운 청록색 */
+}
+
+/* 위 버튼 2 */
+.currency-button {
+    background-color: #3a4058; /* 짙은 남색 */
+}
+
+.currency-button:hover {
+    background-color: #2d3548; /* 어두운 짙은 남색 */
+}
+
+/* 아래 버튼 1 */
+.friendAdd-button {
+    background-color: #f39c12; /* 밝은 주황색 */
+}
+
+.friendAdd-button:hover {
+    background-color: #e67e22; /* 어두운 주황색 */
+}
+
+/* 아래 버튼 2 */
+.wishlist-button {
+    background-color: #8e44ad; /* 자주색 */
+}
+
+.wishlist-button:hover {
+    background-color: #71368a; /* 어두운 자주색 */
+}
+
+
+
+
+
+
+
+
+/* 친구 추가 전용 모달 스타일 */
+.friendAdd-modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1100; /* friend.css의 모달과 겹치지 않도록 z-index 조정 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명한 검은색 배경 */
+    justify-content: center;
+    align-items: center;
+    font-family: "HanaFont-CM";
+}
+
+.friendAdd-modal-dialog {
+    position: relative;
+    max-width: 600px; /* 너비를 더 넓게 설정 */
+    margin: 10% auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.friendAdd-modal-header,
+.friendAdd-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #f7f7f7;*/
+}
+
+.friendAdd-close {
+    cursor: pointer;
+}
+
+/* 모달에 추가된 고유한 클래스명으로 스타일 적용 */
+.friendAdd-modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+
+
+
+
+
+/* Wish Category 모달 스타일 */
+.wish-category-modal {
+    display: none;
+    position: fixed;
+    z-index: 1200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 배경 반투명 */
+    justify-content: center;
+    align-items: center;
+    font-family: "HanaFont-CM"; /* 폰트 통일 */
+}
+
+.wish-category-modal-dialog {
+    position: relative;
+    max-width: 600px; /* 모달 너비 고정 */
+    width: 100%;
+    max-height: 80%; /* 모달 최대 높이 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 모달 높이를 고정하여 내부 스크롤 적용 */
+}
+
+.wish-category-modal-header {
+    display: flex;
+    justify-content: space-between; /* 제목은 왼쪽, 닫기 버튼은 오른쪽 */
+    align-items: center; /* 세로 가운데 정렬 */
+    padding: 10px; /* padding 유지 */
+    background-color: transparent; /* 배경 투명 */
+}
+
+.modal-title {
+    margin: 0;
+    text-align: left;
+    flex-grow: 1; /* 제목이 왼쪽에 고정되도록 함 */
+}
+
+.wish-category-close {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    position: relative;
+}
+
+.wish-category-modal-body {
+    max-height: calc(80vh - 160px); /* 모달 내부 스크롤 적용을 위한 높이 설정 */
+    overflow-y: auto; /* 내용이 많을 때 스크롤 생성 */
+    padding: 20px;
+    border-bottom: 1px solid #ddd; /* 구분선 추가 */
+}
+
+/* 카드 선택 영역 */
+.wish-category-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 20px; /* 하단 패딩 */
+    border-bottom: 1px solid #ddd; /* 구분선 추가 */
+}
+
+/* 카드 스타일 */
+.wish-category-card {
+    text-align: center;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    width: 30%;
+    cursor: pointer;
+    background-color: #fff;
+    font-family: "HanaFont-CM";
+    margin: 0; /* 불필요한 마진 제거 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.wish-category-card label {
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    margin: 0;
+    border-radius: 15px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.wish-category-card img {
+    width: 80px; /* 이미지 크기 조정 */
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.wish-category-card p {
+    font-size: 1.1rem;
+    color: #3a4058; /* 제목 색상 */
+    margin: 10px 0 0;
+}
+
+.wish-category-card .description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* 라디오 버튼 숨김 */
+.wish-category-radio {
+    display: none;
+}
+
+/* 선택된 카드 스타일 */
+.wish-category-card input:checked + label {
+    background-color: #e0f7fa;
+    border: 2px solid #00acc1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 18px; /* padding을 조정하여 선택 효과 */
+}
+
+/* 국가 선택 영역 */
+.country-selection {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* 카드 간 간격 추가 */
+}
+
+/* 국가 카드 스타일 */
+.country-card {
+    text-align: center;
+    padding: 0; /* 카드 바깥쪽 패딩 제거 */
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    width: 22%; /* 카드 너비 설정 */
+    cursor: pointer;
+    background-color: #fff;
+    font-family: "HanaFont-CM";
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    height: 100%; /* 카드 높이 꽉 채우기 */
+}
+
+.country-card label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px; /* 안쪽 여백 최소화 */
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.country-card img {
+    width: 70px; /* 이미지 크기 조정 */
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.country-card p {
+    font-size: 0.9rem;
+    color: #3a4058; /* 제목 색상 */
+    margin: 0; /* 마진 제거 */
+}
+.country-radio {
+    display: none;
+}
+/* 선택된 국가 카드 스타일 */
+.country-card input:checked + label {
+    background-color: #e0f7fa;
+    border: 2px solid #00acc1;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* 선택 시 padding 조정 */
+}
+
+
+/* 더 보기 버튼 스타일 */
+#showMoreButton {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #14807d;
+}
+
+/* 모달 하단 버튼 스타일 */
+.wish-category-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Footer의 높이를 줄이기 위해 padding 감소 */
+    background-color: transparent;
+}
+
+.wish-category-modal-footer .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.wish-category-modal-footer .btn-secondary {
+    background-color: #757575;
+    color: white;
+}
+
+.wish-category-modal-footer .btn-success {
+    background-color: #009778;
+    color: white;
+}
+
+
+/* 좌우 진동 애니메이션 */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 이미지에 진동 애니메이션 적용 */
+.shake-animation {
+    animation: shake 1.5s infinite ease-in-out; /* 1.5초 주기로 진동 애니메이션 */
+    display: inline-block;
+    margin-left: 15px; /* 텍스트와 이미지 사이 간격 */
+    width: 70px; /* 이미지 너비 조정 */
+    height: auto; /* 이미지 비율 유지 */
+}
+.modal-sub-title{
+    color: #3a4058;
+}
+
+
+/* 기본 스타일 */
+.friend-table {
+    font-family: "HanaFont-CM"; /* 폰트 통일 */
+}
+
+/* 프로필 이미지 스타일 */
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* 원형 이미지 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    border: 2px solid #009778; /* 테두리 추가 */
+}
+
+/* 이름 스타일 */
+.friend-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3a4058; /* 짙은 색상 */
+}
+
+/* 상태 메시지 스타일 */
+.friend-status {
+    font-size: 0.85rem;
+    color: #757575; /* 회색 톤 */
+    margin-top: 5px;
+}
+
+/* 버튼 스타일 */
+.btn-view-details {
+    background-color: #009778; /* 상세보기 버튼 색상 */
+    color: white;
+    border-radius: 8px; /* 테두리를 조금 더 둥글게 설정 */
+    padding: 12px 20px; /* 버튼의 패딩을 늘려서 크기 확대 */
+    font-size: 1rem; /* 폰트 크기를 키워서 가독성 향상 */
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 그림자 크기 증가 */
+    transition: background-color 0.3s ease; /* 색상 변경 시 애니메이션 */
+}
+
+.btn-view-details:hover {
+    background-color: #007a5a; /* 호버 시 색상 */
+}
+
+.btn-delete {
+    background-color: #e74c3c; /* 삭제 버튼 색상 */
+    color: white;
+    border-radius: 8px; /* 테두리를 조금 더 둥글게 설정 */
+    padding: 12px 20px; /* 버튼의 패딩을 늘려서 크기 확대 */
+    font-size: 1rem; /* 폰트 크기를 키워서 가독성 향상 */
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 그림자 크기 증가 */
+    transition: background-color 0.3s ease; /* 색상 변경 시 애니메이션 */
+}
+
+.btn-delete:hover {
+    background-color: #c0392b; /* 삭제 버튼 호버 시 색상 */
+}
+
+
+/* 즐겨찾기 아이콘 스타일 */
+.favorite-icon {
+    font-size: 1.5rem;
+    color: #f39c12; /* 노란색 스타 */
+}
+
+.favorite-icon:hover {
+    color: #d35400; /* 호버 시 어두운 노란색 */
+}
+
+/* 행 스타일 */
+.friend-row {
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .friend-row td {
+        flex: 0 0 100%; /* 각 항목을 100% 너비로 배치 */
+        text-align: center; /* 모바일에서 텍스트 정렬 */
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-view-details, .btn-delete {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .favorite-icon {
+        font-size: 1.2rem;
+    }
+}
+.gift-icon-modal {
+    width: 24px; /* 이미지 크기 */
+    height: 24px;
+    margin-right: 8px; /* 이미지와 텍스트 사이의 간격 */
+}
+
+
+
+/*위시리스트*/
+.wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+    position: relative;  /* 자식 요소인 삭제 버튼이 절대 위치를 가질 수 있도록 */
+}
+
+.wishlist-item1 {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 130px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    position: relative;  /* 삭제 버튼의 위치를 절대적으로 설정하기 위해 */
+    font-family: "HanaFont-CM", sans-serif;
+}
+
+.wishlist-item1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-icon img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.wishlist-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wishlist-rate,
+.wishlist-duration {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+/* 삭제 버튼 스타일 */
+.wishlist-delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #dc3545; /* 빨간색으로 강조 */
+    font-size: 0.9rem;
+    cursor: pointer;
+    visibility: visible;  /* 항상 보이도록 설정 */
+    opacity: 1;  /* 항상 보이도록 설정 */
+}
+
+.wishlist-delete-btn:hover {
+    text-decoration: underline;
+}
+
+
+/************************/
+
+.editProfileModal{
+    z-index: 1100;
+}
+.modal-backdrop {
+    z-index: 1040 !important; /* 모달 배경의 z-index */
+}
+
+
+/* 선물 받은 주식*/
+/* 모달 배경 */
+.ms-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%); /* 정확히 가운데로 위치 */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: flex; /* flex로 화면 중앙에 배치 */
+}
+
+/* 모달 내용 */
+.ms-modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    font-family: "HanaFont-CM", sans-serif; /* 폰트 적용 */
+    position: relative;
+    top: 20%; /* 상단에 붙지 않도록 초기화 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 모달 헤더 */
+.ms-modal-header {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center; /* 중앙 정렬 */
+}
+
+/* 모달 닫기 버튼 */
+.ms-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ms-close:hover, .ms-close:focus {
+    color: black;
+}
+
+/* 모달 안의 내용 */
+.ms-modal-body {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.ms-securities-logo {
+    width: 110px;
+    vertical-align: middle;
+}
+
+/* 표 스타일 */
+.ms-stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "HanaFont-CM", sans-serif; /* 폰트 적용 */
+    color: #333;
+}
+
+.ms-stock-table th, .ms-stock-table td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center;
+    font-family: "HanaFont-CM", sans-serif; /* 폰트 적용 */
+    vertical-align: middle; /* 텍스트 수직 정렬 */
+}
+
+.ms-stock-table th {
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 받은 주식 이미지 */
+.ms-stock-image {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* 모달 아이콘 변경 */
+.ms-modal-body p:first-of-type {
+    font-size: 16px;
+    color:#f04566;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ms-modal-body p:first-of-type::before {
+    content: ''; /* 새로운 당구장 표시 */
+    color: #009778;
+    font-size: 20px;
+    margin-right: 10px;
+}

@@ -1,0 +1,242 @@
+#form-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 60px;
+}
+
+#form-inner-container {
+    background-color: white;
+    max-width: 100%; /* 컨테이너의 너비를 최대한 넓게 설정 */
+    width: 100%; /* 부모 요소의 100% 너비를 사용 */
+    border-radius: 8px;
+    box-shadow: 0 0 20px gainsboro;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#sign-up-container,
+#sign-in-container {
+    padding: 20px 40px;
+    width: 60%; /* 입력 칸 컨테이너의 너비를 넓혀서 조정 */
+}
+
+form input:not(:last-of-type),
+form input[name="phone"],
+form input[name="verification-code"] {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #e5e9f5;
+    background-color: #f6f7fa;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.phone-verification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.phone-verification input {
+    width: 65%;
+}
+
+.phone-verification button {
+    width: 30%;
+    padding: 8px;
+    background-color: #ed4b5e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.phone-verification button:hover {
+    background-color: #ff6678;
+    cursor: pointer;
+}
+
+#animation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%; /* 이미지 컨테이너의 너비를 조정 */
+}
+
+#animation-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+h3 {
+    color: red;
+    font-size: 140%;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #7369ab;
+}
+
+::placeholder {
+    color: #c0c7db;
+    font-size: larger;
+    letter-spacing: 1.2px;
+}
+
+#form-controls button {
+    border: none;
+    font-size: 120%;
+    font-family: "HanaFont-CM";
+}
+
+#form-controls button:hover {
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    padding: 10px 50px;
+    background-color: #ed4b5e;
+    border-radius: 10px;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6678;
+}
+
+button[type="button"] {
+    padding: 10px 0 10px 30px;
+    background-color: transparent;
+    color: #ed4b5e;
+}
+
+#terms {
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border: 2px solid #7369ab;
+    border-radius: 4px;
+    position: relative;
+}
+
+#terms:checked:after {
+    content: "\2713";
+    color: #7369ab;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    left: 3px;
+}
+
+label[for="terms"] {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.termsLink {
+    color: #ef7886;
+    text-decoration: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* responsive display */
+@media (max-width: 1124px) {
+    #animation-container {
+        display: none;
+    }
+
+    #form-inner-container {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* 모바일 화면에서도 너비를 최대한 활용 */
+    }
+}
+
+@media (max-width: 684px) {
+    #form-inner-container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%; /* 모바일 화면에서 컨테이너의 너비를 90%로 조정 */
+    }
+
+    .phone-verification {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .phone-verification input,
+    .phone-verification button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    form input:not(:last-of-type),
+    form input[name="phone"],
+    form input[name="verification-code"] {
+        width: 100%;
+    }
+
+    #toggleSignIn,
+    #toggleSignUp {
+        padding: 10px 50px;
+        font-family: "HanaFont-CM";
+    }
+
+    #terms {
+        width: 18px;
+        height: 18px;
+    }
+
+    label[for="terms"] {
+        display: inline-block;
+        font-size: smaller;
+    }
+}
+.login-subtitle {
+    font-family: "HanaFont-CM";
+}
+.gift-header {
+    display: flex;
+    align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
+}
+
+.text-container {
+    margin-left: 15px; /* 이미지와 텍스트 사이의 간격 설정 */
+}
+
+.gift-header h3.mtext-111 {
+    font-family: "HanaFont-CM"; /* 제목 폰트 적용 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-header p.stext-113 {
+    font-family: "HanaFont-CM"; /* 설명글 폰트 적용 */
+    margin-top: 5px; /* 제목과 설명 글 사이의 간격 설정 */
+    margin-bottom: 0; /* 텍스트 간의 간격을 조정 */
+}
+
+.gift-icon {
+    width: 60px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+.input-title {
+    font-family: "HanaFont-Regular";
+    font-size: 16px;
+}
+.input-text {
+    font-family: "HanaFont-Light";
+    font-size: 10px;
+}

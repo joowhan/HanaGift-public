@@ -1,0 +1,539 @@
+.friend-table tbody tr.friend-row {
+    border-bottom: 1px solid #e0e0e0; /* 행의 하단에만 선을 그립니다. */
+    height: 100px; /* 각 행의 높이를 100px로 설정합니다. */
+}
+
+.friend-table tbody tr:last-child {
+    border-bottom: none; /* 마지막 행에는 하단 테두리를 그리지 않습니다. */
+}
+
+.friend-table td {
+    border: none; /* 개별 셀의 테두리를 제거합니다. */
+    vertical-align: middle; /* 텍스트와 컨텐츠를 중간에 정렬합니다. */
+}
+
+.friend-table img {
+    width: 50px; /* 프로필 이미지의 크기 */
+    height: 50px;
+}
+
+.friend-table .btn {
+    padding: 5px 10px; /* 버튼의 패딩 설정 */
+    margin-left: 10px;
+}
+.hov-img0 img {
+    width: 48%;
+    -webkit-transition: transform 0.9s ease;
+    -o-transition: transform 0.9s ease;
+    -moz-transition: transform 0.9s ease;
+    transition: transform 0.9s ease;
+}
+.character-img img {
+    width: 80%;
+    -webkit-transition: transform 0.9s ease;
+    -o-transition: transform 0.9s ease;
+    -moz-transition: transform 0.9s ease;
+    transition: transform 0.9s ease;
+}
+
+/* Modal styles */
+/* 모달의 기본 스타일 */
+/* 모달의 기본 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    max-width: 500px;
+    margin: 5% auto;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #f7f7f7;
+    padding: 15px;
+}
+
+.modal-header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.status-message {
+    font-style: italic;
+    color: #555;
+    font-size: 1.1rem; /* 상태 메시지 폰트 크기 증가 */
+}
+
+.highlight {
+    color: #009778;
+    font-size: 1.3rem; /* 글씨 크기 증가 */
+    font-weight: bold;
+}
+
+.chart-container {
+    width: 50%;
+    margin: 20px auto;
+    position: relative;
+}
+.chart-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 이미지 카드 스타일 */
+.image-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.image-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+/* 텍스트 카드 스타일 */
+.recommended-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.text-card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+
+.text-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+.gift-image {
+    display: block;
+    margin: 20px auto; /* 이미지 가운데 정렬 및 여백 */
+    max-width: 200px; /* 이미지 최대 너비 */
+    height: auto; /* 이미지 자동 높이 조정 */
+}
+.modal-body {
+    max-height: 500px; /* 모달 본문의 최대 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    padding: 15px; /* 본문 내 여백 설정 */
+}
+
+/* 프로필 섹션 스타일 */
+.profile-section {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.profile-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #009778; /* 테두리 추가 */
+}
+.status-message {
+    font-style: italic;
+    color: #555;
+    font-size: 1.1rem; /* 상태 메시지 폰트 크기 증가 */
+}
+
+/* 선물 강조 */
+.highlight {
+    color: #009778;
+    font-size: 1.3rem; /* 글씨 크기 증가 */
+    font-weight: bold;
+}
+
+.username {
+    font-weight: bold;
+}
+
+/* 차트 스타일 */
+.chart-container {
+    width: 70%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.chart-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 여행 추천 섹션 스타일 */
+.travel-recommendations {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.travel-image-container {
+    text-align: center;
+}
+
+.travel-image {
+    width: 80px; /* 국기 이미지 크기를 줄입니다 */
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.travel-image:hover {
+    transform: scale(1.1); /* 호버 시 확대 효과 */
+}
+
+.travel-text a {
+    color: #009778; /* 강조 색상 */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.travel-text a:hover {
+    text-decoration: underline; /* 호버 시 밑줄 */
+}
+.travel-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+.travel-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.travel-card p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* 기타 스타일 */
+.gift-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100px;
+    height: auto;
+}
+/* 본문 텍스트 스타일 */
+.explanation-text {
+    font-size: 1.1rem; /* 설명 글 크기 */
+    color: #555; /* 부드러운 회색 톤 */
+    line-height: 1.6; /* 줄 간격 조정 */
+}
+
+/* 적금 추천 섹션 스타일링 */
+.savings-card {
+    display: block;
+    width: 45%;
+    text-decoration: none;
+    color: inherit;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.savings-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.interest-rate {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #009778;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.layer-slick1 {
+    visibility: hidden;
+}
+
+.animated {
+    visibility: visible;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+[data-appear="fadeInUp"] {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.background1 {
+    background-image: url("../images/bg_utl_app.png"); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기를 컨테이너에 맞춤 */
+    background-position: center; /* 배경 이미지의 위치를 가운데로 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 금지 */
+    width: 100%; /* 컨테이너의 너비를 100%로 설정 */
+    height: 300px; /* 원하는 높이 설정 */
+    display: flex; /* 자식 요소를 중앙에 배치하기 위해 flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    opacity: 0; /* 초기 상태에서 투명하게 설정 */
+    animation: fadeInBackground 1s forwards; /* fadeIn 애니메이션 적용 */
+}
+
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.gift-button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 수평 중앙 정렬 */
+    background-color: #008485; /* 버튼 배경색을 #008485로 설정 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 버튼 테두리 둥글게 */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* 텍스트 색상 */
+    padding: 8px 20px; /* 버튼 내부 여백 설정 */
+    width: 100%; /* 버튼의 너비를 모달 하단에 맞춤 */
+    height: 38px; /* 버튼의 높이를 설정하여 크기를 맞춤 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.gift-button:hover {
+    background-color: #005f5f; /* 호버 시 배경색을 어둡게 */
+    color: #fff; /* 호버 시 텍스트 색상 */
+}
+
+.gift-icon {
+    width: 24px; /* 이미지 크기 */
+    height: 24px;
+    margin-right: 8px; /* 이미지와 텍스트 사이의 간격 */
+}
+/* Delete Confirmation Modal 스타일 */
+#deleteModal .modal-content {
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+}
+
+#deleteModal .modal-header {
+    background-color: #008485;
+    color: white;
+    border-bottom: none;
+}
+
+#deleteModal .modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#deleteModal .modal-body {
+    font-size: 1rem;
+    color: #333;
+}
+
+#deleteModal .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+#deleteModal .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+
+/* 탭 전체 스타일 */
+.custom-nav-tabs {
+    display: flex;
+    justify-content: space-between; /* 탭들을 수평으로 정렬 */
+    border-bottom: none; /* 전체 밑줄 제거 */
+    padding-bottom: 5px;
+}
+
+/* 탭 아이템 스타일 */
+.custom-nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+/* 기본 탭 링크 스타일 */
+.custom-nav-link {
+    color: #757575 !important; /* 기본 상태에서 글씨 색상 */
+    font-size: 1.2rem;
+    padding: 10px 0;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* 밑줄을 탭 내부에서 컨트롤할 수 있게 설정 */
+    display: block; /* 탭을 블록으로 설정해 너비가 맞게 적용 */
+}
+
+/* 탭 밑줄 */
+.custom-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* 밑줄을 글씨 바로 아래에 위치 */
+    left: 0;
+    width: 100%; /* 밑줄이 탭 전체 너비만큼 차지 */
+    height: 3px;
+    background-color: transparent; /* 기본 상태에서 밑줄은 보이지 않음 */
+    transition: all 0.3s ease-in-out;
+}
+
+/* 선택된 탭 링크 스타일 */
+.custom-nav-link.active {
+    color: #008485 !important; /* 선택된 탭 글씨 색상 */
+}
+
+.custom-nav-link.active::after {
+    background-color: #008485; /* 선택된 탭 밑줄 색상 */
+}
+
+/* 호버 시 스타일 */
+.custom-nav-link:hover {
+    color: #008485;
+}
+
+.custom-nav-link:hover::after {
+    background-color: #008485; /* 호버 시 밑줄 표시 */
+}
+
+
+
+/* 카드 컨테이너 */
+.wishlist-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* 각 카드 스타일 */
+.wishlist-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 150px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* 태그 스타일 */
+.tag {
+    background-color: #f0f0f0;
+    color: #555;
+    font-size: 0.8rem;
+    padding: 3px 6px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* 이미지 스타일 */
+.wishlist-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+/* 제목 스타일 */
+.wishlist-item h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 카드 호버 시 애니메이션 */
+.wishlist-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 금리 스타일 */
+.interest-rate {
+    font-size: 0.9rem;
+    color: #009778;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* 소제목 스타일 */
+.gift-title {
+    font-size: 1.3rem; /* 소제목 크기 */
+    font-weight: bold;
+    color: #008485; /* 어두운 색으로 강조 */
+}
+
+
+/* 강조된 선물 카테고리 스타일 */
+.gift-category {
+    background-color: #f0f0f0; /* 배경색 추가 */
+    padding: 5px 10px;
+    border-radius: 8px; /* 약간의 둥근 테두리 */
+    color: #008485; /* 선물 카테고리 색상 */
+    font-size: 1.2rem; /* 약간 더 큰 글씨 */
+    font-weight: bold;
+}
