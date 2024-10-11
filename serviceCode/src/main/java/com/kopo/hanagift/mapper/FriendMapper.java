@@ -38,10 +38,21 @@ public interface FriendMapper {
             "VALUES ( #{userId}, #{friendId}, #{friendName}, now(), 'standby', #{phoneNumber})")
     void insertFriend(Friend friend);
 
-    @Select("SELECT friendId, friendName, phoneNumber " +
-            "FROM Friends " +
-            "WHERE userId = #{userId} AND status = #{status}")
+    // 나에게 요청을 보낸 친구
+    @Select("select Friends.UserID friendId, Users.Name FriendName, Users.PhoneNumber phoneNumber from Friends join Users on Users.UserID=Friends.UserID " +
+            "WHERE FriendID = #{userId} AND status = #{status}")
     List<Friend> findFriendsByStatus(@Param("userId") String userId, @Param("status") String status);
-    @Update("UPDATE Friends set status = #{status} where UserID = #{userId} and FriendID =#{friendId}")
+
+    @Update("UPDATE Friends set status = #{status} where UserID = #{friendId} and FriendID =#{userId}")
     int friendAprroved(@Param("userId") String userId, @Param("friendId") String friendId, @Param("status") String status);
+
+    @Select("SELECT * FROM Friends WHERE UserID = #{friendId} and FriendID =#{userId}")
+    Friend findFriend(@Param("userId") String userId, @Param("friendId") String friendId);
+
+    @Select("select count(*) from Friends where Status='standby' and FriendID=#{userId}")
+    int countRequestFriends(String userId);
+    @Insert("INSERT INTO Friends ( UserID, FriendID, friendName, Date, Status, PhoneNumber) " +
+            "VALUES ( #{userId}, #{friendId}, #{friendName}, now(), 'approved', #{phoneNumber})")
+    void insertApprovedFriend(@Param("userId")String userId, @Param("friendId") String friendId,
+                              @Param("friendName") String friendName, @Param("phoneNumber") String phoneNumber);
 }

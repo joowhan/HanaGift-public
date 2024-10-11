@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>로그인</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
     <jsp:include page="component/head.jsp" flush="false"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/signInUp.css" />

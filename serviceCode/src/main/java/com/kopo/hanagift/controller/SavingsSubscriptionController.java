@@ -74,7 +74,8 @@ public class SavingsSubscriptionController {
         String userId = (String) session.getAttribute("userId");
         log.info("사용자 ID [{}]의 적금 가입 요청을 처리 중입니다.", userId);
         log.info("받은 적금 정보: {}", savings.getAccountNumber());
-
+        log.info(""+savings.getDuration());
+        log.info(savings.getSavingsCode());
 
         // 적금 가입 로직 처리 (데이터베이스 저장)
         boolean isSuccess = bankService.completeSubscription(savings);

@@ -2,8 +2,11 @@ package com.kopo.hanagift.mapper;
 
 import com.kopo.hanagift.dto.ForeignExchangeTransactions;
 import com.kopo.hanagift.dto.ForeignWallet;
+import com.kopo.hanagift.dto.ForeignWalletJoined;
 import com.kopo.hanagift.dto.HanaMoney;
 import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface HanaMoneyMapper {
@@ -37,6 +40,7 @@ public interface HanaMoneyMapper {
     @Insert("INSERT INTO ForeignWallet (UserID, CurrencyCode, Balance) VALUES (#{userId}, #{currencyUnit}, #{balance})")
     void insertNewWallet(@Param("userId") String userId, @Param("currencyUnit") String currencyUnit, @Param("balance") double balance);
 
-
+    @Select("select Balance,CurrencyCode,ProductName,LogoImageURL from ForeignWallet f JOIN StockNCurrency c on f.CurrencyCode=c.Code where UserID=#{userId}")
+    List<ForeignWalletJoined> getForeignWallet(String userId);
 
 }

@@ -2,6 +2,7 @@ package com.kopo.hanagift.mapper;
 
 import com.kopo.hanagift.dto.SecuritiesAccounts;
 import com.kopo.hanagift.dto.SecuritiesTransaction;
+import com.kopo.hanagift.dto.StockHoldings;
 import com.kopo.hanagift.dto.StockPrice;
 import org.apache.ibatis.annotations.*;
 
@@ -95,4 +96,7 @@ public interface SecuritiesMapper {
             "  AND DATE(sp1.UpdatedAt) >= DATE_SUB(CURDATE(), INTERVAL 5 DAY) " +
             "ORDER BY sp1.UpdatedAt ")
     List<StockPrice> getStockPriceByPeriod(@Param("code") String code);
+
+    @Select("select Quantity, StockCode, ProductName, LogoImageURL from StockHoldings s join StockNCurrency c on s.StockCode= c.Code where AccountNumber=#{accountNumber}")
+    List<StockHoldings> getStockHoldings(String accountNumber);
 }

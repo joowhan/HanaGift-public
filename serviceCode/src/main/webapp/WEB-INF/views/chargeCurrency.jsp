@@ -323,7 +323,7 @@
                                     </div>
                                 </div>
                                 <div class="exchange-rate" style="font-family: 'HanaFont-CM';">
-                                    적용 환율: <span id="exchange-rate" style="font-weight: bold;">${latestRate.exchangeRate}</span>
+                                    적용 환율: <span id="exchange-rate" style="font-weight: bold;">${latestRate.exchangeRate}원</span>
 
                                     <!-- 변동 지표와 금액 및 퍼센트를 한 줄로 표시 -->
                                     <c:choose>
@@ -363,7 +363,7 @@
 
                         <div class="size-209">
         <span class="mtext-110 cl2">
-            ${latestRate.exchangeRate}
+            ${latestRate.exchangeRate}원
         </span>
 
                             <!-- 변동 지표 표시 (상승/하락 표시) -->

@@ -64,6 +64,12 @@ public class FriendService {
 
         // 요청이 존재하고 상태가 'approved'가 아닐 경우 처리
         int rows = friendMapper.friendAprroved(userId, friendId,"approved");  // 상태를 'approved'로 변경
+        Users friend = userMapper.findById(friendId);
+        friendMapper.insertApprovedFriend(userId, friendId, friend.getName(), friend.getPhoneNumber());
         return rows>0;  // 실패시 false 반환
+    }
+
+    public int getFriendRequestCount(String userId){
+        return friendMapper.countRequestFriends(userId);
     }
 }

@@ -9,6 +9,34 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .partner-section {
+            padding-top: 40px; /* 전체 섹션 위쪽 여백 */
+        }
+
+        .partner-logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* 로고 간 간격 설정 */
+        }
+
+        .partner-logo {
+            margin: 10px; /* 로고 주변에 여백 추가 */
+        }
+
+        .partner-logo img {
+            max-width: 120px; /* 로고의 최대 너비 설정 */
+            height: auto; /* 높이는 비율에 맞춰 자동 조절 */
+            transition: transform 0.3s ease; /* 로고 호버 시 애니메이션을 부드럽게 설정 */
+        }
+
+        .partner-logo img:hover {
+            transform: scale(1.1); /* 마우스 호버 시 로고 확대 효과 */
+        }
+
+    </style>
 </head>
 <body>
 <footer class="bg3 p-t-75 p-b-32">
@@ -107,28 +135,6 @@
                     궁금한 점을 쉽고 빠르게 물어보세요!
                 </p>
 
-                <div class="p-t-27">
-                    <a
-                            href="#"
-                            class="fs-18 cl7 hov-cl1 trans-04 m-r-16"
-                    >
-                        <i class="fa fa-facebook"></i>
-                    </a>
-
-                    <a
-                            href="#"
-                            class="fs-18 cl7 hov-cl1 trans-04 m-r-16"
-                    >
-                        <i class="fa fa-instagram"></i>
-                    </a>
-
-                    <a
-                            href="#"
-                            class="fs-18 cl7 hov-cl1 trans-04 m-r-16"
-                    >
-                        <i class="fa fa-pinterest-p"></i>
-                    </a>
-                </div>
             </div>
 
             <div class="col-sm-6 col-lg-3 p-b-50">
@@ -156,62 +162,31 @@
             </div>
         </div>
 
-        <div class="p-t-40">
-            <div class="flex-c-m flex-w p-b-18">
-                <a href="#" class="m-all-1">
+        <div class="partner-section">
+            <div class="partner-logo-wrapper">
+                <a href="#" class="partner-logo">
                     <img
-                            src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-01.png"
-                            alt="ICON-PAY"
+                            src="${pageContext.request.contextPath}/resources/images/hanabank1.png"
+                            alt="하나은행 아이콘"
                     />
                 </a>
 
-                <a href="#" class="m-all-1">
+                <a href="#" class="partner-logo">
                     <img
-                            src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-02.png"
-                            alt="ICON-PAY"
+                            src="${pageContext.request.contextPath}/resources/images/hanacard1.png"
+                            alt="하나카드 아이콘"
                     />
                 </a>
 
-                <a href="#" class="m-all-1">
+                <a href="#" class="partner-logo">
                     <img
-                            src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-03.png"
-                            alt="ICON-PAY"
-                    />
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img
-                            src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-04.png"
-                            alt="ICON-PAY"
-                    />
-                </a>
-
-                <a href="#" class="m-all-1">
-                    <img
-                            src="${pageContext.request.contextPath}/resources/images/icons/icon-pay-05.png"
-                            alt="ICON-PAY"
+                            src="${pageContext.request.contextPath}/resources/images/hanasecurities1.png"
+                            alt="하나증권 아이콘"
                     />
                 </a>
             </div>
-
-<%--            <p class="stext-107 cl6 txt-center">--%>
-<%--                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--%>
-<%--                Copyright &copy;--%>
-<%--                <script>--%>
-<%--                    document.write(new Date().getFullYear());--%>
-<%--                </script>--%>
-<%--                All rights reserved | Made with--%>
-<%--                <i class="fa fa-heart-o" aria-hidden="true"></i> by--%>
-<%--                <a href="https://colorlib.com" target="_blank"--%>
-<%--                >Colorlib</a--%>
-<%--                >--%>
-<%--                &amp; distributed by--%>
-<%--                <a href="https://themewagon.com" target="_blank"--%>
-<%--                >ThemeWagon</a--%>
-<%--                >--%>
-<%--                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--%>
-<%--            </p>--%>
         </div>
+
     </div>
 </footer>
 </body>

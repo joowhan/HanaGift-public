@@ -52,12 +52,11 @@
                         placeholder="Search for friends..."
                 />
                 <div class="friend-list mt-3">
-                    <c:forEach var="friend" items="${friends}">
+                    <c:forEach var="friend" items="${friendList}">
                         <div class="friend-item" data-friend-id="${friend.friendId}" data-friend-name="${friend.friendName}" onclick="selectFriend(this)">
-                            <img src="${pageContext.request.contextPath}/resources/images/profile2.png" alt="Friend Avatar" class="friend-avatar"/>
+                            <img src="${pageContext.request.contextPath}${friend.friendProfileUrl}" alt="Friend Avatar" class="friend-avatar"/>
                             <div class="friend-info">
                                 <p class="friend-name">${friend.friendName}</p>
-                                <span class="status-indicator online">Online</span>
                             </div>
                         </div>
                     </c:forEach>

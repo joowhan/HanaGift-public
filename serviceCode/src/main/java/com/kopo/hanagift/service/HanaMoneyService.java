@@ -2,12 +2,14 @@ package com.kopo.hanagift.service;
 
 import com.kopo.hanagift.dto.ForeignExchangeTransactions;
 import com.kopo.hanagift.dto.ForeignWallet;
+import com.kopo.hanagift.dto.ForeignWalletJoined;
 import com.kopo.hanagift.dto.HanaMoney;
 import com.kopo.hanagift.mapper.HanaMoneyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -65,5 +67,8 @@ public class HanaMoneyService {
             hanaMoneyMapper.insertNewWallet(userId, currencyUnit, receivedAmount);
         }
         return true;
+    }
+    public List<ForeignWalletJoined> getForeignWallet(String userId){
+        return hanaMoneyMapper.getForeignWallet(userId);
     }
 }

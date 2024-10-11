@@ -113,9 +113,10 @@
                     </div>
 
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                            <c:if test="${not empty sessionScope.userId}">
-                                data-notify="2"
+                            <c:if test="${not empty sessionScope.userId && not empty sessionScope.notifyCount}">
+                                data-notify="${sessionScope.notifyCount}"
                             </c:if>
+
                     >
                         <i class="zmdi zmdi-account-add"></i> <!-- 사람 추가 아이콘 -->
                     </div>
@@ -281,7 +282,7 @@
                     Object.values(data).forEach(function (friend) {
                         var $listItem = $('<li>', {class: 'friend-list-item'});
                         var $friendInfo = $('<div>', {class: 'friend-info'});
-
+                        console.log("gggg",friend.friendId);
                         // friendName, phoneNumber 값을 각 p 요소에 삽입
                         $('<p>', {class: 'friend-name'}).text(friend.friendName).appendTo($friendInfo);
                         $('<p>', {class: 'friend-contact'}).text(friend.phoneNumber).appendTo($friendInfo);
@@ -334,6 +335,7 @@
                     }
                 }
             }).then((isConfirmed) => {
+                console.log(friendId);
                 if (isConfirmed) {
                     // 수락 로직 처리 (예: 서버에 수락 요청 보내기)
                     $.ajax({

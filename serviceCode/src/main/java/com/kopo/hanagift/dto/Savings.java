@@ -14,5 +14,5 @@ public class Savings {
     private double amount;           // 금액
     private double totalAmount;      // 총 금액
     private String savingsCode;      // 저축 코드
-    private String duration;
+    private int duration;
 }

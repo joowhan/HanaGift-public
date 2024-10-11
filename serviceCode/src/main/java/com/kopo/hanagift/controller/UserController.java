@@ -1,11 +1,10 @@
 package com.kopo.hanagift.controller;
 
 import com.kopo.hanagift.dto.*;
-import com.kopo.hanagift.service.FriendService;
-import com.kopo.hanagift.service.StockNCurrencyService;
-import com.kopo.hanagift.service.UserService;
-import com.kopo.hanagift.service.WishListService;
+import com.kopo.hanagift.service.*;
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@Slf4j
 public class UserController {
 
     @Autowired
@@ -28,11 +28,17 @@ public class UserController {
     private StockNCurrencyService stockNCurrencyService;
     @Autowired
     private WishListService wishListService;
+    @Autowired
+    private BankService bankService;
+    @Autowired
+    private SecuritiesService securitiesService;
+    @Autowired
+    private HanaMoneyService hanaMoneyService;
 
     @GetMapping("/myPage")
     public String myPage(Model model, HttpSession session){
         // 임시 로그인 상태
-        session.setAttribute("userId", "joy98721");
+//        session.setAttribute("userId", "joy98721");
 
         String userId = (String) session.getAttribute("userId");
         if (userId == null) {
@@ -43,6 +49,13 @@ public class UserController {
         UserPreferences userPreferences = userService.findUserPreference(userId);
 //        List<Friend> friendList = friendService.findAllFriendsById(userId);
 //        List<UserPreferences> friendPreference = userService.findFriendPreferences(userId);
+        BankAccounts bankAccount = bankService.getAccountsByUserId(userId);
+        List<SavingsJoined> savings = bankService.getSavings(bankAccount.getAccountNumber());
+
+        SecuritiesAccounts securitiesAccount = securitiesService.getAccountsByUserId(userId).get(0);
+        List<StockHoldings> stockHoldings = securitiesService.getStockHoldings(securitiesAccount.getAccountNumber());
+        List<ForeignWalletJoined> foreignWallets = hanaMoneyService.getForeignWallet(userId);
+
         List<WishList> wishLists = wishListService.findUserWishList(userId);
         List<FriendList> friendList = friendService.findFriendList(userId);
         List<StockNCurrency> currencyList = stockNCurrencyService.findCurrencyAll();
@@ -56,6 +69,10 @@ public class UserController {
         model.addAttribute("currencyList", currencyList);
         model.addAttribute("wishlist", wishLists);
         model.addAttribute("stockGifts",stockGifts);
+        log.info(""+savings.size());
+        model.addAttribute("savings", savings);
+        model.addAttribute("foreignWallets",foreignWallets);
+        model.addAttribute("stockHoldings",stockHoldings);
         return "myPage";
     }
     @PostMapping("myPage/savePreferences")

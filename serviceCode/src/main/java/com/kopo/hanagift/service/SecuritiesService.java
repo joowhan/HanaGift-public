@@ -2,6 +2,7 @@ package com.kopo.hanagift.service;
 
 import com.kopo.hanagift.dto.SecuritiesAccounts;
 import com.kopo.hanagift.dto.SecuritiesTransaction;
+import com.kopo.hanagift.dto.StockHoldings;
 import com.kopo.hanagift.dto.StockPrice;
 import com.kopo.hanagift.mapper.SecuritiesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,10 @@ public class SecuritiesService {
 
     public List<StockPrice> getStockPriceByPeriod(String code){
         return securitiesMapper.getStockPriceByPeriod(code);
+    }
+
+    public List<StockHoldings> getStockHoldings(String accountNumber){
+        return securitiesMapper.getStockHoldings(accountNumber);
     }
 
 }

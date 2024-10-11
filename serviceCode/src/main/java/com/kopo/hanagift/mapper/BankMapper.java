@@ -1,9 +1,6 @@
 package com.kopo.hanagift.mapper;
 
-import com.kopo.hanagift.dto.BankAccounts;
-import com.kopo.hanagift.dto.BankTransaction;
-import com.kopo.hanagift.dto.InterestRate;
-import com.kopo.hanagift.dto.Savings;
+import com.kopo.hanagift.dto.*;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -40,9 +37,12 @@ public interface BankMapper {
 
     // INSERT 쿼리
     @Insert("INSERT INTO db.Savings (AccountNumber, OpenDate, MaturityDate, PaymentDate, BaseRate, Amount, TotalAmount, SavingsCode) " +
-            "VALUES (#{accountNumber}, now(),  DATE_ADD(NOW(), INTERVAL #{duration} MONTH), #{paymentDate}, #{baseRate}, #{amount}, #{amount}, 'HANA_S001')")
+            "VALUES (#{accountNumber}, now(),  DATE_ADD(NOW(), INTERVAL #{duration} MONTH), #{paymentDate}, #{baseRate}, #{amount}, #{amount}, #{savingsCode})")
     int insertSavings(Savings savings);
 
-    // UPDATE 쿼리 (계좌 번호를 기반으로 업데이트)
 
+
+    @Select("select AccountNumber, OpenDate,MaturityDate,PaymentDate,BaseRate,Amount, TotalAmount, ProductName, imgUrl " +
+            "from Savings s join SavingsProducts p on s.SavingsCode=p.ProductID WHERE AccountNumber=#{accountNumber}")
+    List<SavingsJoined> getSavings(String accountNumber);
 }

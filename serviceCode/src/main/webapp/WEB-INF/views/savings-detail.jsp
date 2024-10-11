@@ -8,74 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<style>
-    #selectFriendButton,
-    #cancelFriendSelectionButton,
-    #giftByContactButton {
-        border: 1px solid #008485 !important;
-        background-color: white !important;
-        color : #008485 !important;
-        margin-left : 2% !important;
-        margin-right : 0 !important;
-        flex : 1;
-    }
-
-    #selectFriendButton,
-    #cancelFriendSelectionButton {
-        width: 40% !important;
-    }
-    #giftByContactButton {
-        width : 54% !important;
-    }
-    #leftBox {
-        border: 1px solid #dddddd !important;
-        border-radius: 10px;
-    }
-    #submitButton {
-        margin-top: 20px;
-        width: 70%;
-        height: 40px;
-        border-radius: 40px;
-        background-color: #008485 !important;
-        color : white !important;
-    }
-
-
-    .custom-input-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        border: 1px solid #ccc; /* 테두리 추가 */
-        border-radius: 4px; /* 모서리 둥글게 */
-        padding: 10px; /* 내부 여백 추가 */
-    }
-
-    .custom-input {
-        width: 100%;
-        /*padding: 5px 50px 10px 15px; !* Padding을 조정하여 오른쪽에 여백을 확보 *!*/
-        padding-right: 30px;
-        border: none; /* 추가적인 테두리 제거 */
-        outline: none; /* 선택 시 기본 테두리 제거 */
-        font-size: 16px;
-        color: #333;
-        background-color: transparent; /* 배경 투명으로 설정 */
-        text-align: right;
-    }
-
-    .custom-input::placeholder {
-        color: #aaa; /* Placeholder 색상 변경 */
-    }
-
-    .currency-label {
-        position: absolute;
-        right: 15px; /* 오른쪽에 위치 */
-        font-size: 16px;
-        color: #333;
-    }
-
-
-</style>
-
 <html lang="en">
 <head>
     <title>상품 상세</title>
@@ -93,7 +25,208 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .accordion-content {
+            font-family: "HanaFont-Light", sans-serif;
+            background-color:white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .info-table th, .info-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .info-table th {
+            background-color: #008485;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f3f3f3; /* 짝수 행 배경색 변경으로 가독성 향상 */
+        }
+
+        .info-table tr:hover {
+            background-color: #f1f1f1; /* 마우스를 올렸을 때의 강조 효과 */
+        }
+
+        .preferential-rate {
+            font-size: 1rem;
+            margin: 20px 0;
+            color: #444;
+        }
+
+    </style>
+    <style>
+        #selectFriendButton,
+        #cancelFriendSelectionButton,
+        #giftByContactButton {
+            border: 1px solid #008485 !important;
+            background-color: white !important;
+            color : #008485 !important;
+            margin-left : 2% !important;
+            margin-right : 0 !important;
+            flex : 1;
+        }
+
+        #selectFriendButton,
+        #cancelFriendSelectionButton {
+            width: 40% !important;
+        }
+        #giftByContactButton {
+            width : 54% !important;
+        }
+        #leftBox {
+            border: 1px solid #dddddd !important;
+            border-radius: 10px;
+        }
+        #submitButton {
+            margin-top: 20px;
+            width: 70%;
+            height: 40px;
+            border-radius: 40px;
+            background-color: #008485 !important;
+            color : white !important;
+        }
+
+
+        .custom-input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc; /* 테두리 추가 */
+            border-radius: 4px; /* 모서리 둥글게 */
+            padding: 10px; /* 내부 여백 추가 */
+        }
+
+        .custom-input {
+            width: 100%;
+            /*padding: 5px 50px 10px 15px; !* Padding을 조정하여 오른쪽에 여백을 확보 *!*/
+            padding-right: 30px;
+            border: none; /* 추가적인 테두리 제거 */
+            outline: none; /* 선택 시 기본 테두리 제거 */
+            font-size: 16px;
+            color: #333;
+            background-color: transparent; /* 배경 투명으로 설정 */
+            text-align: right;
+        }
+
+        .custom-input::placeholder {
+            color: #aaa; /* Placeholder 색상 변경 */
+        }
+
+        .currency-label {
+            position: absolute;
+            right: 15px; /* 오른쪽에 위치 */
+            font-size: 16px;
+            color: #333;
+        }
+
+        .accordion-content {
+            font-family: "HanaFont-Light", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-content p {
+            margin-bottom: 15px;
+        }
+
+        .accordion-content h4 {
+            font-size: 1.2rem;
+            color: #009778;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .gift-instructions ol,
+        .receive-instructions ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .gift-instructions .note {
+            color: #d9534f; /* 경고 메시지를 강조하기 위해 빨간색 사용 */
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .product-info-section {
+            text-align: center;
+            background-color: #f9f9f9;  /* 배경색을 연하게 설정하여 구분 */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+            font-family: Arial, sans-serif;
+        }
+
+        .product-info-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-info-desc {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .product-info-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .product-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .view-guide-btn {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #009778;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .view-guide-btn:hover {
+            background-color: #007f65;
+            transform: translateY(-2px);
+        }
+
+    </style>
     <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -425,7 +558,7 @@
                                 <div class="accordion">
                                     <div class="accordion-item">
                                         <div class="accordion-header">
-                                            상품유형
+                                            선물하기, 선물받기
                                             <img
                                                     src="${pageContext.request.contextPath}/resources/images/icons/down.png"
                                                     alt="Down"
@@ -433,9 +566,27 @@
                                             />
                                         </div>
                                         <div class="accordion-content">
-                                            <strong>상품유형:</strong>
-                                            ${savingProduct.productType}
+                                            <p><strong>상품유형:</strong> ${savingProduct.productType}</p>
+                                            <p><strong>가입 대상:</strong> 실명의 개인(1인 3계좌)</p>
+                                            <p><strong>저축 방법:</strong> 자유 적립식</p>
 
+                                            <div class="gift-instructions">
+                                                <h4>선물하는 방법</h4>
+                                                <ol>
+                                                    <li>1. 받는 사람의 이름과 연락처를 입력하거나, 친구맺기를 한 친구를 선택하세요!</li>
+                                                    <li>2. 선물 금액을 입력하세요.</li>
+                                                    <li>3. 선물을 보내면, 문자로 선물 받는 사람에게 알림이 가요!</li>
+                                                </ol>
+                                                <p class="note">※ 이때 선물 받는 사람의 실명과 전화번호를 정확하게 입력해야 선물을 받을 수 있어요.</p>
+                                            </div>
+
+                                            <div class="receive-instructions">
+                                                <h4>선물 받는 방법</h4>
+                                                <ol>
+                                                    <li>1. 하나 Gift에 접속해요.</li>
+                                                    <li>2. 선물함에서 선물 받기를 누르면 바로 적금을 가입할 수 있어요.</li>
+                                                </ol>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="accordion-item">
@@ -476,10 +627,38 @@
                                             />
                                         </div>
                                         <div class="accordion-content">
-                                            <strong>우대금리:</strong>
-                                            조건 충족 시 최대 연 ${productDetails.preferentialRate}%
-                                            추가 금리 혜택
+                                            <table class="info-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>가입 기간</th>
+                                                    <th>${productDetails.minDuration} ~ ${productDetails.maxDuration} 개월</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+
+                                            <p class="preferential-rate">
+                                                <strong>우대금리:</strong> 조건 충족 시 최대 연 ${productDetails.preferentialRate}% 추가 금리 혜택
+                                            </p>
+
+                                            <table class="info-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>조건</th>
+                                                    <th>우대 금리</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- 반복적으로 데이터를 출력 -->
+                                                <c:forEach var="rate" items="${interestRate}">
+                                                    <tr>
+                                                        <td>${rate.conditionName}</td>
+                                                        <td>연 ${rate.preferentialInterestRate}%</td>
+                                                    </tr>
+                                                </c:forEach>
+                                                </tbody>
+                                            </table>
                                         </div>
+
                                     </div>
                                     <c:if test="${not empty productDetails.pdfLink}">
                                         <div class="accordion-item">
@@ -492,10 +671,13 @@
                                                 />
                                             </div>
                                             <div class="accordion-content">
-                                                <strong>상품 설명서:</strong>
-                                                <a href="${pageContext.request.contextPath}${productDetails.pdfLink}" target="_blank">
-                                                    PDF 보기
-                                                </a>
+                                                <h3 class="product-info-title">안전한 상품가입을 위해 상품 설명서를 먼저 확인해 주세요.</h3>
+                                                <p class="product-info-desc">상품가입이 완료되면, 계약서와 함께 설명서를 전달드려요.</p>
+
+                                                <div class="product-info-box">
+                                                    <span class="product-name">${savingProduct.productName}</span>
+                                                    <a href="${pageContext.request.contextPath}${productDetails.pdfLink}" target="_blank" class="view-guide-btn">설명서 보기</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </c:if>
@@ -617,245 +799,6 @@
             </span>
 </div>
 
-<!-- Modal1 -->
-<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-    <div class="overlay-modal1 js-hide-modal1"></div>
-
-    <div class="container">
-        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-            <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-                <img src="images/icons/icon-close.png" alt="CLOSE" />
-            </button>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-7 p-b-30">
-                    <div class="p-l-25 p-r-30 p-lr-0-lg">
-                        <div class="wrap-slick3 flex-sb flex-w">
-                            <div class="wrap-slick3-dots"></div>
-                            <div
-                                    class="wrap-slick3-arrows flex-sb-m flex-w"
-                            ></div>
-
-                            <div class="slick3 gallery-lb">
-                                <div
-                                        class="item-slick3"
-                                        data-thumb="images/product-detail-01.jpg"
-                                >
-                                    <div
-                                            class="wrap-pic-w pos-relative"
-                                    >
-                                        <img
-                                                src="images/product-detail-01.jpg"
-                                                alt="IMG-PRODUCT"
-                                        />
-
-                                        <a
-                                                class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                href="images/product-detail-01.jpg"
-                                        >
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div
-                                        class="item-slick3"
-                                        data-thumb="images/product-detail-02.jpg"
-                                >
-                                    <div
-                                            class="wrap-pic-w pos-relative"
-                                    >
-                                        <img
-                                                src="images/product-detail-02.jpg"
-                                                alt="IMG-PRODUCT"
-                                        />
-
-                                        <a
-                                                class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                href="images/product-detail-02.jpg"
-                                        >
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div
-                                        class="item-slick3"
-                                        data-thumb="images/product-detail-03.jpg"
-                                >
-                                    <div
-                                            class="wrap-pic-w pos-relative"
-                                    >
-                                        <img
-                                                src="images/product-detail-03.jpg"
-                                                alt="IMG-PRODUCT"
-                                        />
-
-                                        <a
-                                                class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                href="images/product-detail-03.jpg"
-                                        >
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-5 p-b-30">
-                    <div class="p-r-50 p-t-5 p-lr-0-lg">
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
-                            Lightweight Jacket
-                        </h4>
-
-                        <span class="mtext-106 cl2"> $58.79 </span>
-
-                        <p class="stext-102 cl3 p-t-23">
-                            Nulla eget sem vitae eros pharetra viverra.
-                            Nam vitae luctus ligula. Mauris consequat
-                            ornare feugiat.
-                        </p>
-
-                        <!--  -->
-                        <div class="p-t-33">
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Size
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select
-                                                class="js-select2"
-                                                name="time"
-                                        >
-                                            <option>
-                                                Choose an option
-                                            </option>
-                                            <option>Size S</option>
-                                            <option>Size M</option>
-                                            <option>Size L</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                        <div
-                                                class="dropDownSelect2"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Color
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select
-                                                class="js-select2"
-                                                name="time"
-                                        >
-                                            <option>
-                                                Choose an option
-                                            </option>
-                                            <option>Red</option>
-                                            <option>Blue</option>
-                                            <option>White</option>
-                                            <option>Grey</option>
-                                        </select>
-                                        <div
-                                                class="dropDownSelect2"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div
-                                        class="size-204 flex-w flex-m respon6-next"
-                                >
-                                    <div
-                                            class="wrap-num-product flex-w m-r-20 m-tb-10"
-                                    >
-                                        <div
-                                                class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m"
-                                        >
-                                            <i
-                                                    class="fs-16 zmdi zmdi-minus"
-                                            ></i>
-                                        </div>
-
-                                        <input
-                                                class="mtext-104 cl3 txt-center num-product"
-                                                type="number"
-                                                name="num-product"
-                                                value="1"
-                                        />
-
-                                        <div
-                                                class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m"
-                                        >
-                                            <i
-                                                    class="fs-16 zmdi zmdi-plus"
-                                            ></i>
-                                        </div>
-                                    </div>
-
-                                    <button
-                                            class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
-                                    >
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-                        <div
-                                class="flex-w flex-m p-l-100 p-t-40 respon7"
-                        >
-                            <div class="flex-m bor9 p-r-10 m-r-11">
-                                <a
-                                        href="#"
-                                        class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
-                                        data-tooltip="Add to Wishlist"
-                                >
-                                    <i class="zmdi zmdi-favorite"></i>
-                                </a>
-                            </div>
-
-                            <a
-                                    href="#"
-                                    class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
-                                    data-tooltip="Facebook"
-                            >
-                                <i class="fa fa-facebook"></i>
-                            </a>
-
-                            <a
-                                    href="#"
-                                    class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
-                                    data-tooltip="Twitter"
-                            >
-                                <i class="fa fa-twitter"></i>
-                            </a>
-
-                            <a
-                                    href="#"
-                                    class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100"
-                                    data-tooltip="Google Plus"
-                            >
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--===============================================================================================-->
 <!-- jQuery, Popper.js, Bootstrap JS -->

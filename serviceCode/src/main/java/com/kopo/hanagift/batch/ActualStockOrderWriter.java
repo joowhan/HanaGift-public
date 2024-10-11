@@ -4,10 +4,11 @@ import com.kopo.hanagift.dto.SecuritiesAccounts;
 import com.kopo.hanagift.dto.StockOrder;
 import com.kopo.hanagift.mapper.SecuritiesMapper;
 import com.kopo.hanagift.mapper.StockOrderMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
-
+@Slf4j
 public class ActualStockOrderWriter implements ItemWriter<StockOrder> {
 
     @Autowired
@@ -25,7 +26,7 @@ public class ActualStockOrderWriter implements ItemWriter<StockOrder> {
             //개인 증권에 소수점 배분
             // 2. 계좌 정보 조회
             SecuritiesAccounts account = securitiesMapper.getOneAccountByUserId(order.getReceiverID());
-
+            log.info("변환된 주식"+order.getStockQuantity());
             // 3. 해당 계좌의 보유 주식 정보 업데이트
             if (securitiesMapper.existsByAccountNumberAndStockCode(account.getAccountNumber(), order.getStockCode())) {
                 // 이미 존재하는 경우: 수량 및 금액을 업데이트 (기존 값에 더함)

@@ -107,7 +107,7 @@
                             <p class="friend-name">${friendName} (${friendContact})</p>
                         </div>
                         <div class="friend-request-btn">
-                            <button class="btn js-accept-request" data-name="${friendName}" data-contact="${friendContact}">
+                            <button class="btn js-accept-request"  data-name="${friendName}" data-contact="${friendContact}">
                                 수락
                             </button>
                         </div>

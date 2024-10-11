@@ -28,14 +28,12 @@ public interface StockOrderMapper {
     @Update("UPDATE stockOrder SET Status = 'CONCLUSION' WHERE OrderID = #{OrderID}")
     void updateOrderStatusToConclusion(Long orderID);
 
-
     // 주문 실행 내역 저장
     @Insert("INSERT INTO stockOrderExecution (OrderID) VALUES (#{OrderID})")
     void saveOrderExecution(Long OrderID);
 
     @Update("UPDATE stockOrder SET stockOrder.ExpectedStockQuantity = #{expectedStockQuantity} WHERE OrderID =#{orderId}")
     void updateExpectedStockQuantity(@Param("expectedStockQuantity") double expectedStockQuantity, @Param("orderId") Long orderId);
-
 
     @Update("UPDATE stockOrder SET stockOrder.StockQuantity = #{stockQuantity} WHERE OrderID = #{orderId} ")
     void updateStockQuantity(@Param("stockQuantity") double stockQuantity, @Param("orderId") Long orderId);

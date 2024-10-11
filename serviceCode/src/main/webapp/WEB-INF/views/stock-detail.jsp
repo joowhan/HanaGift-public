@@ -632,7 +632,7 @@
                     <!-- 리뷰 영역 -->
                     <jsp:include page="component/review.jsp" flush="false"/>
                     <%-- 리뷰 모달 --%>
-                    <jsp:include page="modal/review.jsp" flush="false"/>
+                    <jsp:include page="modal/review_stock.jsp" flush="false"/>
                 </div>
             </div>
         </div>

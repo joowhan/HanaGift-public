@@ -352,7 +352,7 @@
                                                     <img src="${pageContext.request.contextPath}${savingProduct.imgUrl}" alt="적금 아이콘" class="icon-img-new">
                                                 </div>
                                             </div>
-
+<%--                                            <input type="hidden" name="duration" id="durationField">--%>
                                             <!-- 오른쪽 섹션: 기간 선택 및 계좌 선택 -->
                                             <div class="col-md-6">
                                                 <div class="card mb-4 shadow-sm">
@@ -591,8 +591,9 @@
             $(this).addClass('selected');
 
             const duration = $(this).data('duration');
-            selectedInfo.duration = duration ? `${duration}개월` : null;
-
+            console.log(duration);
+            selectedInfo.duration = duration ? duration : null;
+            console.log(selectedInfo.duration);
             if ($(this).attr('id') === 'customDurationBtn') {
                 $('#customDurationGroup').show();
                 selectedInfo.duration = null;
@@ -708,12 +709,13 @@
 
         // 적금 가입 데이터를 수집하고 서버로 전송하는 함수
         function submitSubscription() {
-            const durationMonths = getDurationMonths(selectedInfo.duration);
+            const durationMonths = selectedInfo.duration;
             const giftAmountStr = $(".gift-amount").text().replace('원', '').trim();
             const interestRateStr = $(".interest-rate").text().replace('%', '').trim();
 
             const amount = parseFloat(giftAmountStr);
             const baseRate = parseFloat(interestRateStr);
+            const savingsCode = '${savingProduct.productId}';
 
             var savingsData = {
                 accountNumber: selectedInfo.account.accountNumber,
@@ -721,6 +723,7 @@
                 paymentDate: selectedInfo.transferDay, // 숫자만 전달
                 baseRate: baseRate,
                 amount: amount,
+                savingsCode: savingsCode,
             };
 
             $.ajax({

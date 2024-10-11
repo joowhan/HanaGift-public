@@ -1,9 +1,6 @@
 package com.kopo.hanagift.service;
 
-import com.kopo.hanagift.dto.BankAccounts;
-import com.kopo.hanagift.dto.BankTransaction;
-import com.kopo.hanagift.dto.InterestRate;
-import com.kopo.hanagift.dto.Savings;
+import com.kopo.hanagift.dto.*;
 import com.kopo.hanagift.mapper.BankMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -82,6 +79,10 @@ public class BankService {
     public boolean completeSubscription(Savings savings){
         int rows = bankMapper.insertSavings(savings);
         return rows >0;
+    }
+
+    public List<SavingsJoined> getSavings(String bankAccount){
+        return bankMapper.getSavings(bankAccount);
     }
 
 

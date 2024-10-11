@@ -28,7 +28,7 @@
                 <c:forEach var="review" items="${reviews}">
                     <div class="review-item flex-w flex-t p-b-68">
                         <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                            <img src="${pageContext.request.contextPath}/resources/images/profile2.png" alt="AVATAR" />
+                            <img src="${pageContext.request.contextPath}${review.profileUrl}" alt="AVATAR" />
                         </div>
                         <div class="size-207">
                             <div class="flex-w flex-sb-m p-b-17">

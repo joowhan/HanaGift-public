@@ -12,4 +12,5 @@ public class Reviews {
     private String writtenDate;
     private String reviewText;
     private int stars;
+    private String profileUrl;
 }

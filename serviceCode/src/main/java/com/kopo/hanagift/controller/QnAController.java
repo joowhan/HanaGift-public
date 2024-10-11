@@ -34,7 +34,7 @@ public class QnAController {
             @RequestParam(value = "page", defaultValue = "1") int page){
 
         int postsPerPage = 20; // 페이지당 게시글 수
-        session.setAttribute("userId", "joy9876");
+//        session.setAttribute("userId", "joy9876");
         String userId = (String) session.getAttribute("userId");
         if (userId == null) {
             return "redirect:/loginPage";  // loginPage는 JSP 파일의 URL

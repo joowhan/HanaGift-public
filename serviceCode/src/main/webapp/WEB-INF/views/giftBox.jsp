@@ -15,6 +15,14 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/friend.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/gift-box.css" />
+    <style>
+        .caution-information{
+            font-family: "HanaFont-Light", sans-serif;
+            color: #dc3545;
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -95,6 +103,9 @@
                                 <a class="dropdown-item" href="#" data-filter="foreign">외화</a>
                             </div>
                         </div>
+                        <p class="caution-information">
+                            &#8251; 받은 날짜로부터 5일 이내에 받지 않으면 자동으로 취소됩니다!
+                        </p>
                         <!-- 받은 선물 아이템 목록 -->
                         <c:forEach var="gift" items="${receivedGifts}">
                             <c:choose>
@@ -120,6 +131,17 @@
                                                         data-product-type="${gift.productCategory}"
                                                         style="z-index: 9999">
                                                     선물 받기
+                                                </button>
+                                                <button class="btn btn-outline-danger ml-2 js-reject-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        data-amount="${gift.amount}"
+                                                        data-currency-unit="${gift.currencyUnit}"
+                                                        data-sender-id="${gift.senderID}"
+                                                        data-product-type="${gift.productCategory}"
+                                                        style="z-index: 9999">
+                                                    거절
                                                 </button>
                                             </c:when>
                                             <c:when test="${gift.status == 'RECEIVED'}">
@@ -154,6 +176,17 @@
                                                         style="z-index: 9999">
                                                     선물 받기
                                                 </button>
+                                                <button class="btn btn-outline-danger ml-2 js-reject-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        data-amount="${gift.amount}"
+                                                        data-currency-unit="${gift.currencyUnit}"
+                                                        data-sender-id="${gift.senderID}"
+                                                        data-product-type="${gift.productCategory}"
+                                                        style="z-index: 9999">
+                                                    거절
+                                                </button>
                                             </c:when>
                                             <c:when test="${gift.status == 'RECEIVED'}">
                                                 <span class="badge badge-success ml-auto">선물 받기 완료</span>
@@ -186,6 +219,17 @@
                                                         data-product-type="${gift.productCategory}"
                                                         style="z-index: 9999">
                                                     선물 받기
+                                                </button>
+                                                <button class="btn btn-outline-danger ml-2 js-reject-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        data-amount="${gift.amount}"
+                                                        data-currency-unit="${gift.currencyUnit}"
+                                                        data-sender-id="${gift.senderID}"
+                                                        data-product-type="${gift.productCategory}"
+                                                        style="z-index: 9999">
+                                                    거절
                                                 </button>
                                             </c:when>
 
@@ -216,7 +260,9 @@
                                 <a class="dropdown-item" href="#" data-filter="foreign">외화</a>
                             </div>
                         </div>
-
+                        <p class="caution-information">
+                            &#8251; 보낸 선물을 상대방이 받기 전까지 취소할 수 있어요!
+                        </p>
                         <!-- 보낸 선물 아이템 목록 -->
                         <c:forEach var="gift" items="${sentGifts}">
                             <c:choose>
@@ -233,6 +279,14 @@
                                         <c:choose>
                                             <c:when test="${gift.status == 'SENT'}">
                                                 <span class="badge badge-warning ml-auto">받기 대기중</span>
+                                                <button class="btn btn-outline-danger ml-2 js-cancel-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        style="z-index: 9999">
+                                                    취소
+                                                </button>
+
                                             </c:when>
                                             <c:when test="${gift.status == 'RECEIVED'}">
                                                 <span class="badge badge-success ml-auto">받기 완료</span>
@@ -256,6 +310,13 @@
                                         <c:choose>
                                             <c:when test="${gift.status == 'SENT'}">
                                                 <span class="badge badge-warning ml-auto">받기 대기중</span>
+                                                <button class="btn btn-outline-danger ml-2 js-cancel-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        style="z-index: 9999">
+                                                    취소
+                                                </button>
                                             </c:when>
                                             <c:when test="${gift.status == 'RECEIVED'}">
                                                 <span class="badge badge-success ml-auto">받기 완료</span>
@@ -278,6 +339,13 @@
                                         <c:choose>
                                             <c:when test="${gift.status == 'SENT'}">
                                                 <span class="badge badge-warning ml-auto">받기 대기중</span>
+                                                <button class="btn btn-outline-danger ml-2 js-cancel-gift"
+                                                        data-gift-id="${gift.giftID}"
+                                                        data-product-id="${gift.productID}"
+                                                        data-product-name="${gift.productName}"
+                                                        style="z-index: 9999">
+                                                    취소
+                                                </button>
                                             </c:when>
                                             <c:when test="${gift.status == 'RECEIVED'}">
                                                 <span class="badge badge-success ml-auto">받기 완료</span>
@@ -436,7 +504,41 @@ div class="btn-back-to-top" id="myBtn">
             });
         });
     });
+    $(document).on("click", ".js-reject-gift", function(event) {
+        event.preventDefault();
+        var giftID = $(this).data("gift-id");
+        var productName = $(this).data("product-name");
 
+        // SweetAlert으로 확인 메시지 표시
+        swal({
+            title: productName,
+            text: "이 선물을 거절하시겠습니까?",
+            icon: "warning",
+            buttons: ["취소", "거절"],
+            dangerMode: true,
+        }).then((willReject) => {
+            if (willReject) {
+                $.ajax({
+                    type: "POST",
+                    url: `${pageContext.request.contextPath}/rejectGift`,
+                    contentType: "application/json",
+                    data: JSON.stringify({ giftID: giftID }),
+                    success: function(response) {
+                        if (response.success) {
+                            swal("거절 완료!", "선물을 거절했습니다.", "success").then(() => {
+                                location.reload();  // 페이지 새로고침
+                            });
+                        } else {
+                            swal("실패!", "선물을 거절할 수 없습니다.", "error");
+                        }
+                    },
+                    error: function() {
+                        swal("오류!", "서버와의 통신에 실패했습니다.", "error");
+                    }
+                });
+            }
+        });
+    });
 
 
 

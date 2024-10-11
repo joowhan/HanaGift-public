@@ -52,6 +52,11 @@ public class ProductController {
         modelAndView.addObject("activeMenu", "home");
         model.addAttribute("selectedProductType", productType);
 
+        if(session.getAttribute("userId") !=null) {
+            String userId = (String) session.getAttribute("userId");
+            int count = friendService.getFriendRequestCount(userId);
+            session.setAttribute("notifyCount", count);
+        }
         // StockNCurrency 테이블에서 모든 제품 데이터를 조회하여 모델에 추가
         List<StockNCurrency> products = productService.getAllProducts();
         List<SavingProduct> savingProducts = productService.getAllSavingProduct();
@@ -87,12 +92,15 @@ public class ProductController {
         SavingProduct savingProduct = productService.getSavingById(productId);
         List<Friend> friends = friendService.findAllFriendsById(userId);
         List<Reviews> reviews = reviewService.findAllReviewsById(productId);
-
+        List<InterestRate> productInterest = bankService.getProductInterestRate(productId);
+        List<FriendList> friendList = friendService.findFriendList(userId);
         model.addAttribute("accounts", accounts);
         model.addAttribute("savingProduct", savingProduct);
         model.addAttribute("productDetails", savingProductDetails);
         model.addAttribute("friends", friends);
         model.addAttribute("reviews", reviews);
+        model.addAttribute("friendList",friendList);
+        model.addAttribute("interestRate",productInterest);
 
 
         return "savings-detail";
@@ -163,6 +171,52 @@ public class ProductController {
         return "redirect:/savings-detail?productId="+productID;
     }
 
+    @PostMapping("/submitReview/stock")
+    public String submitReviewStock(
+            HttpSession session,
+            @RequestParam("productID") String productID,
+            @RequestParam("reviewText") String reviewText,
+            @RequestParam("stars") int stars,
+            RedirectAttributes redirectAttributes) {
+        Reviews review = new Reviews();
+        review.setUserID((String) session.getAttribute("userId"));
+        review.setProductID(productID);
+        review.setReviewText(reviewText);
+        review.setStars(stars);
+        review.setWrittenDate(LocalDate.now().toString()); // 현재 날짜 설정
+
+        // 리뷰 저장 로직
+        reviewService.saveReview(review);
+
+        // 리뷰 저장 후 리디렉션
+        redirectAttributes.addFlashAttribute("message", "리뷰가 성공적으로 작성되었습니다!");
+        return "redirect:/stocks-details?productId="+productID;
+    }
+
+    @PostMapping("/submitReview/currency")
+    public String submitReviewSCurrency(
+            HttpSession session,
+            @RequestParam("productID") String productID,
+            @RequestParam("reviewText") String reviewText,
+            @RequestParam("productCode") String productCode,
+            @RequestParam("stars") int stars,
+            RedirectAttributes redirectAttributes) {
+        Reviews review = new Reviews();
+        review.setUserID((String) session.getAttribute("userId"));
+        review.setProductID(productID);
+        review.setReviewText(reviewText);
+        review.setStars(stars);
+        review.setWrittenDate(LocalDate.now().toString()); // 현재 날짜 설정
+
+        // 리뷰 저장 로직
+        reviewService.saveReview(review);
+
+        // 리뷰 저장 후 리디렉션
+        redirectAttributes.addFlashAttribute("message", "리뷰가 성공적으로 작성되었습니다!");
+        return "redirect:/currency-details?productCode="+productCode+"&productId="+productID;
+    }
+
+
     @GetMapping("/stocks-details")
     public String stockDetail(
             @RequestParam(value = "productId") String productId,
@@ -181,6 +235,7 @@ public class ProductController {
         List<Friend> friends = friendService.findAllFriendsById(userId);
         List<Reviews> reviews = reviewService.findAllReviewsById(productId);
         List<StockPrice> stockPriceList = securitiesService.getStockPriceByPeriod(stock.getCode());
+        List<FriendList> friendList = friendService.findFriendList(userId);
         // JSON 문자열로 직렬화
         ObjectMapper objectMapper = new ObjectMapper();
         String stockPriceListJson = objectMapper.writeValueAsString(stockPriceList);
@@ -188,10 +243,10 @@ public class ProductController {
         model.addAttribute("stockPriceListJson", stockPriceListJson);
         model.addAttribute("stockPriceList", stockPriceList);
         model.addAttribute("accounts", accounts);
+        model.addAttribute("friendList",friendList);
         model.addAttribute("stock", stock);
         model.addAttribute("friends", friends);
         model.addAttribute("reviews", reviews);
-
 
         return "stock-detail";
     }
@@ -214,7 +269,8 @@ public class ProductController {
         List<Reviews> reviews = reviewService.findAllReviewsById(productId);
         StockNCurrency currency = productService.getStockNCurrency(productId);
         List<ExchangeRate> exchangeRatePeriod = exchangeRateService.findExchangeRatePeriod(productCode);
-
+        List<FriendList> friendList = friendService.findFriendList(userId);
+        model.addAttribute("friendList",friendList);
         // JSON 문자열로 직렬화
         ObjectMapper objectMapper = new ObjectMapper();
         String exchangeRatePeriodJson = objectMapper.writeValueAsString(exchangeRatePeriod);

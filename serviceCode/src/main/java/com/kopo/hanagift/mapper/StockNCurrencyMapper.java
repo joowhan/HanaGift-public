@@ -21,6 +21,4 @@ public interface StockNCurrencyMapper {
 
     @Select("SELECT Code FROM StockNCurrency WHERE Category = 'Stocks'")
     List<String> findStockCodes();
-
-
 }
